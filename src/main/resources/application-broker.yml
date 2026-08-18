@@ -1,0 +1,8 @@
+plinth:
+  messaging:
+    enabled: true
+
+management:
+  health:
+    rabbit:
+      enabled: true
