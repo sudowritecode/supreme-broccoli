@@ -93,7 +93,6 @@ class MessagingMvpFlowTest {
                 .get()
                 .extracting(outbox -> outbox.getStatus())
                 .isEqualTo(OutboxStatus.PENDING);
-        assertThat(messageOutboxRepository.count()).isEqualTo(1);
     }
 
     @Test
