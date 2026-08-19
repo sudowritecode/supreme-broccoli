@@ -1,0 +1,27 @@
+{
+  "name": "@plinth/signal-client-contract",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Client-side Signal Protocol integration contracts for Plinth; cryptographic operations must be supplied by a reviewed adapter.",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "check": "tsc --noEmit --project tsconfig.json",
+    "build": "tsc --project tsconfig.json"
+  },
+  "peerDependencies": {
+    "@signalapp/libsignal-client": "*"
+  },
+  "peerDependenciesMeta": {
+    "@signalapp/libsignal-client": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "typescript": "5.9.3"
+  }
+}

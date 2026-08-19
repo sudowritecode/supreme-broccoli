@@ -52,3 +52,5 @@ plinth:
   payments:
     enabled: ${PLINTH_PAYMENTS_ENABLED:false}
     live-enabled: false
+  signal-protocol:
+    enabled: ${PLINTH_SIGNAL_PROTOCOL_ENABLED:false}

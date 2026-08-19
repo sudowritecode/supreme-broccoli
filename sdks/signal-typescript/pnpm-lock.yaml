@@ -1,0 +1,48 @@
+lockfileVersion: '9.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+importers:
+
+  .:
+    dependencies:
+      '@signalapp/libsignal-client':
+        specifier: '*'
+        version: 0.101.0
+    devDependencies:
+      typescript:
+        specifier: 5.9.3
+        version: 5.9.3
+
+packages:
+
+  '@signalapp/libsignal-client@0.101.0':
+    resolution: {integrity: sha512-jzccj85fXv4lHEqtU+EsV3snivNbM3HwMG9eE3MUPyxha4QzxvZFc3YzpiF2eC3v47Sua7IBauuct3I98QzGsA==}
+
+  node-gyp-build@4.8.4:
+    resolution: {integrity: sha512-LA4ZjwlnUblHVgq0oBF3Jl/6h/Nvs5fzBLwdEF4nuxnFdsfajde4WfxtJr3CaiH+F6ewcIB/q4jQ4UzPyid+CQ==}
+    hasBin: true
+
+  type-fest@4.41.0:
+    resolution: {integrity: sha512-TeTSQ6H5YHvpqVwBRcnLDCBnDOHWYu7IvGbHT6N8AOymcr9PJGjc1GTtiWZTYg0NCgYwvnYWEkVChQAr9bjfwA==}
+    engines: {node: '>=16'}
+
+  typescript@5.9.3:
+    resolution: {integrity: sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw==}
+    engines: {node: '>=14.17'}
+    hasBin: true
+
+snapshots:
+
+  '@signalapp/libsignal-client@0.101.0':
+    dependencies:
+      node-gyp-build: 4.8.4
+      type-fest: 4.41.0
+
+  node-gyp-build@4.8.4: {}
+
+  type-fest@4.41.0: {}
+
+  typescript@5.9.3: {}

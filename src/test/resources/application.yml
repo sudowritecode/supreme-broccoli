@@ -21,3 +21,5 @@ plinth:
   payments:
     enabled: true
     live-enabled: false
+  signal-protocol:
+    enabled: true
