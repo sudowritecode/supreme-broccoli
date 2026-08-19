@@ -17,3 +17,13 @@
 
 # Operating system files
 .DS_Store
+
+# JavaScript / TypeScript SDK local dependencies and output
+node_modules/
+dist/
+
+# Python SDK local environments and package output
+.venv/
+__pycache__/
+*.py[cod]
+build/

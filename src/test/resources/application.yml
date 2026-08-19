@@ -12,3 +12,9 @@ plinth:
     outbound-queue: plinth.message.outbound
     dead-letter-queue: plinth.message.outbound.dlq
     routing-key: message.outbound
+  mini-apps:
+    enabled: true
+    registration-key: test-mini-app-operator-key
+    ticket-private-key-base64: MC4CAQAwBQYDK2VwBCIEIGoQKaLaPX51Fl7idJv9MwIf5NZ6YHxoNp9ukSUqRl+W
+    ticket-public-key-base64: MCowBQYDK2VwAyEAmkq0eD0tHOvJ0W5gsWUyGBOO0D2JWLkMw8W6zK7dyic=
+    ticket-lifetime-seconds: 300

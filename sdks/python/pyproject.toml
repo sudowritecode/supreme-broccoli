@@ -1,0 +1,13 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "plinth-miniapp-sdk"
+version = "0.1.0"
+description = "Signed manifest and launch-ticket verification primitives for Plinth mini apps."
+requires-python = ">=3.11"
+dependencies = ["cryptography>=42,<46"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["plinth_miniapps"]

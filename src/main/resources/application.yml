@@ -43,3 +43,9 @@ plinth:
     outbound-queue: ${PLINTH_MESSAGE_OUTBOUND_QUEUE:plinth.message.outbound}
     dead-letter-queue: ${PLINTH_MESSAGE_DEAD_LETTER_QUEUE:plinth.message.outbound.dlq}
     routing-key: ${PLINTH_MESSAGE_ROUTING_KEY:message.outbound}
+  mini-apps:
+    enabled: ${PLINTH_MINI_APPS_ENABLED:false}
+    registration-key: ${PLINTH_MINI_APPS_REGISTRATION_KEY:}
+    ticket-private-key-base64: ${PLINTH_MINI_APPS_TICKET_PRIVATE_KEY_BASE64:}
+    ticket-public-key-base64: ${PLINTH_MINI_APPS_TICKET_PUBLIC_KEY_BASE64:}
+    ticket-lifetime-seconds: ${PLINTH_MINI_APPS_TICKET_LIFETIME_SECONDS:300}

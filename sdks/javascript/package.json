@@ -1,0 +1,16 @@
+{
+  "name": "@plinth/miniapp-sdk",
+  "version": "0.1.0",
+  "description": "Verification and narrow bridge primitives for Plinth signed mini apps.",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": ["dist", "README.md"],
+  "scripts": {
+    "build": "tsc --project tsconfig.json",
+    "check": "tsc --noEmit --project tsconfig.json"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3"
+  }
+}
