@@ -49,3 +49,6 @@ plinth:
     ticket-private-key-base64: ${PLINTH_MINI_APPS_TICKET_PRIVATE_KEY_BASE64:}
     ticket-public-key-base64: ${PLINTH_MINI_APPS_TICKET_PUBLIC_KEY_BASE64:}
     ticket-lifetime-seconds: ${PLINTH_MINI_APPS_TICKET_LIFETIME_SECONDS:300}
+  payments:
+    enabled: ${PLINTH_PAYMENTS_ENABLED:false}
+    live-enabled: false
