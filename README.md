@@ -1,8 +1,10 @@
 # Plinth API
 
-Plinth API is the Spring Boot foundation for a privacy-first messaging platform. This initial scaffold accepts **client-encrypted message envelopes** and publishes them to a RabbitMQ outbound queue. It deliberately does not decrypt, inspect, or log message content.
+Plinth API is the Spring Boot foundation for a privacy-first messaging platform. It accepts **client-encrypted message envelopes** and publishes them to a RabbitMQ outbound queue. It deliberately does not decrypt, inspect, or log message content.
 
-> This is a backend foundation, not a complete secure messenger. Authentication, device-key lifecycle, audited end-to-end encryption protocol integration, persistence, delivery consumers, attachments, rate limiting, and production hardening remain to be implemented before a user-facing beta.
+The current backend foundation includes authenticated device sessions and delivery replay, private groups, provider-neutral call-session orchestration, invite-only interest-matched rooms, curated private game-session coordination, signed mini-app manifests with companion JavaScript/TypeScript and Python verification SDKs, and sandbox-only payment intents. Advanced modules are feature-gated and intentionally do not provide live media, untrusted app hosting, or real payment execution.
+
+> This is a backend foundation, not a complete secure messenger. Audited end-to-end encryption protocol integration, device-key verification/recovery, attachments, rate limiting, client applications, production operations, external security testing, real-time media selection, mini-app sandboxing, and regulated financial-partner work remain required before a user-facing beta or public launch.
 
 ## Technology choices
 
@@ -79,7 +81,11 @@ With the `broker` profile active, use the RabbitMQ management console to inspect
 
 ```bash
 ./mvnw test
-./mvnw package
+./mvnw -B clean package
+
+# Optional SDK verification
+cd sdks/javascript && pnpm install --frozen-lockfile && pnpm check
+cd ../python && uv run --with cryptography python tests/test_verification.py
 ```
 
 ## Repository layout
@@ -95,6 +101,11 @@ src/main/java/za/hungu/plinth/
   config/       Typed configuration and RabbitMQ topology
   messaging/    Ciphertext event contract and broker abstraction
   health/       Lightweight platform state endpoint
+  calls/        Provider-neutral private call-session orchestration
+  rooms/        Invite-only interest-matched room lifecycle and safety controls
+  games/        Curated private game-session coordination
+  miniapps/     Signed manifest and narrow launch-ticket foundation
+  payments/     Sandbox-only payment-intent interface
 src/main/resources/db/migration/
                 Versioned Flyway migrations
 src/test/        Context, API, and vertical-slice tests
@@ -106,4 +117,4 @@ compose.yaml     Local PostgreSQL and RabbitMQ dependencies
 
 The broker payload is an `EncryptedMessageEvent`. The server treats `ciphertext` as opaque transport data and must never accept a plaintext alternative. The present scaffold should not be described as Signal-compatible or secure messaging until it integrates an audited encryption protocol, device-key verification, authentication, authorization, cryptographic storage, delivery-consumer controls, security testing, and independent review.
 
-Read [`docs/architecture/messaging.md`](docs/architecture/messaging.md) before extending the message flow.
+Read [`docs/architecture/messaging.md`](docs/architecture/messaging.md) before extending the message flow. For launch blockers, local verification, and deployment gates, read [`docs/operations/release-readiness.md`](docs/operations/release-readiness.md).
